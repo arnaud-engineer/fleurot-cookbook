@@ -368,7 +368,7 @@ main
 
 
 			.recipe-steps img:hover
-			{ transform: scale(1.02); }
+			{ transform: scale(1.05); }
 
 
 
@@ -558,25 +558,36 @@ body.focused { overflow: hidden; }
 
 
 
+/*
+img, li
+{ break-inside: avoid; }
 
+h1, h2, h3, h4, h5, h6
+{ page-break-after: avoid; }
+*/
+
+@page { size: auto;  margin: 20mm; }
 
 @media print
 {
+	.recipe-steps img
+	{
+		display: none;
+	}
+
 	:root
 	{
-		--headerHeight: max(60px, 12vh);
 
-		--articleWidth: min(800px, 90vw);
+		--articleWidth: 100vw;
 
-		--defaultMarge: max(14px, 6vw, 6vh);
-			--defaultMiniMarge: calc(var(--defaultMarge) / 6);
+		--defaultMarge: max(8px, 2vw, 2vh);
+			--defaultMiniMarge: calc(var(--defaultMarge) / 8);
 
-		--defaultFontSize:		14px;
-		--defaultFontSizeMini:	10px;
+		--defaultFontSize:		12px;
+		--defaultFontSizeMini:	9px;
 		--defaultFontSizeH1:	32px;
 		--defaultFontSizeH2:	24px;
-		--defaultFontSizeH3:	18px;
-
+		--defaultFontSizeH3:	16px;
 
 		--defaultBackground: white;
 			--darkBackground: black;
@@ -586,8 +597,6 @@ body.focused { overflow: hidden; }
 			--darkStrongColor: #d8b646;
 
 	}
-
-	@page { size: auto;  margin: 20mm; }
 
 	header { display: none; }
 	.recipe-illustration { display: none; }
@@ -609,6 +618,7 @@ body.focused { overflow: hidden; }
 
 	* { box-shadow: none !important; }
 
+
 	/*.recipe-conservation, .recipe-degustation, .recipe-notes,
 	li
 	{ page-break-inside: avoid; }*/
@@ -627,16 +637,9 @@ body.focused { overflow: hidden; }
 	/* does not work */
 
 	
-	h1, h2, h3, h4, h5, h6
-	{ page-break-after: avoid; }
 
-	li
-	{ page-break-inside: avoid; }
 	
 }
-
-
-
 
 
 
