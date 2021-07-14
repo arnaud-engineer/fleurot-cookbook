@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root
@@ -9,11 +11,11 @@
 	--defaultMarge: max(12px, 3vw, 3vh);
 		--defaultMiniMarge: calc(var(--defaultMarge) / 2);
 
-	--defaultFontSize:		20px;
-	--defaultFontSizeMini:	16px;
-	--defaultFontSizeH1:	42px;
-	--defaultFontSizeH2:	27px;
-	--defaultFontSizeH3:	21px;
+	--defaultFontSize:		18px;
+	--defaultFontSizeMini:	12px;
+	--defaultFontSizeH1:	38px;
+	--defaultFontSizeH2:	28px;
+	--defaultFontSizeH3:	24px;
 
 
 	--defaultBackground: white;
@@ -52,7 +54,7 @@
 
 body
 {
-	font-family: Garamond;
+	font-family: 'EB Garamond', Garamond, serif;
 	font-size: var(--defaultFontSize);
 	color: var(--defaultFontColor);
 
@@ -101,32 +103,64 @@ header
 	header *
 	{
 		display: inline-block;
-		margin: auto;
 		vertical-align: middle;
 
 	}
+
+		header h1
+		{ margin: 0; }
 
 		header ul
 		{ display: inline; white-space:nowrap; }
 
 		header li
 		{
-			margin: auto;
-			margin-left: var(--defaultMarge);
+			height: 0;
+			height: calc(var(--headerHeight));
+
+
 
 			font-size: var(--defaultFontSizeH2);
+
+			vertical-align: top;
+
 		}
+
+		header li a
+		{ height: 100%; padding: 0; margin: 0; }
 
 		header li:last-child { margin-right: var(--defaultMarge); }
 
 			header li img
 			{
-				height: .9em;
+				/*height: .9em;
 				display: inline-block;
+				vertical-align: middle;*/
+
+
+				position: relative;
+				height: calc(var(--headerHeight));
 				vertical-align: middle;
+
+				padding: calc(var(--headerHeight) * .35);
+				padding-right: calc(var(--headerHeight) * .2);
+
+
+
+
 			}
 
-			header .button-title { display: inline-block; margin-left: .5em; }
+			header .button-title {
+				display: inline-block;
+
+
+				vertical-align: middle;
+
+				padding-bottom: calc(var(--headerHeight) * .04);
+				padding-right: calc(var(--headerHeight) * .2);
+
+
+			}
 
 				@media (max-width: 768px) {
 					header .button-title { display: none; }
@@ -144,8 +178,9 @@ header h1 { /*margin-top: calc(var(--headerHeight) * .25);*/ }
 	height: calc(var(--headerHeight));
 	vertical-align: middle;
 
-	padding: 3%;
-	padding-top: 6%;
+	padding: 6%;
+	padding-top: 10%;
+	padding-left: 10%;
 }
 
 
@@ -487,6 +522,7 @@ li { margin-bottom: calc(var(--defaultMiniMarge) / 2); }
 .credit
 {
 	text-align: center;
+	font-style: italic;
 }
 
 #arnaud-logo, #fleurot-logo
@@ -587,13 +623,13 @@ body.focused { overflow: hidden; }
 	position: fixed;
 	bottom: var(--defaultMarge);
 	right: var(--defaultMarge);
-	width: max(5vh, 5vw, 40px);
-	height: max(5vh, 5vw, 40px);
+	width: max(5vh, 5vw, 70px);
+	height: max(5vh, 5vw, 70px);
 
 	background-color: rgba(0,0,0,.8);
 
 	border: none;
-	border-radius: var(--defaultMiniMarge);
+	border-radius: max(5vh, 5vw, 40px);
 
 	cursor: pointer;
 
@@ -608,8 +644,8 @@ body.focused { overflow: hidden; }
 
 .print-button img
 {
-	width: 64%;
-	height: 64%;
+	width: 55%;
+	height: 55%;
 }
 
 
@@ -639,11 +675,11 @@ h1, h2, h3, h4, h5, h6
 		--defaultMarge: max(8px, 2vw, 2vh);
 			--defaultMiniMarge: calc(var(--defaultMarge) / 8);
 
-		--defaultFontSize:		16px;
-		--defaultFontSizeMini:	12px;
-		--defaultFontSizeH1:	36px;
-		--defaultFontSizeH2:	28px;
-		--defaultFontSizeH3:	22px;
+		--defaultFontSize:		14px;
+		--defaultFontSizeMini:	10px;
+		--defaultFontSizeH1:	32px;
+		--defaultFontSizeH2:	26px;
+		--defaultFontSizeH3:	18px;
 
 		--defaultBackground: white;
 			--darkBackground: black;
