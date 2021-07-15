@@ -218,8 +218,10 @@ header h1 a { max-width: max(150px, 30vw);} /* awfull dirty fix */
 
 main
 {
-	position: absolute;
+	/*position: absolute;*/
 	top: 0; left: 0;
+
+	margin-top: calc(1.8 * (100vh - var(--headerHeight)) / 3);
 }
 
 	.recipe-illustration
@@ -234,6 +236,8 @@ main
 		background-color: black;
 
 		transform: scale(1);
+
+		z-index: -100000000000000000;
 	}
 
 
@@ -248,8 +252,34 @@ main
     		top: -9999px; bottom: -9999px; left: -9999px; right: -9999px;
     		margin: auto;
 
+
     		/* Parallax -> scroll is update with JS */
 			transform: translateY(calc(1% * var(--scroll)));
+
+
+
+			filter: contrast(120%) brightness(.9);
+		}
+
+	.recipe-miniature
+	{
+		width: 100%;
+		height: max(250px, 20vh);
+		overflow: hidden;
+
+		margin-bottom: var(--defaultMarge);
+	}
+
+		.recipe-miniature img
+		{
+			min-width: 100%;
+			min-height: 100%;
+
+			position: relative;
+			top: -250%;
+	    	margin: auto;
+
+	    	filter: contrast(110%) brightness(1.1);
 		}
 
 
@@ -264,12 +294,11 @@ main
 		max-width: 100vw;
 
 		margin-left: calc((100vw - var(--articleWidth)) / 2);
-		margin-top: calc(1.5 * (100vh - var(--headerHeight)) / 3);
-		margin-bottom: var(--defaultMarge);
+		margin-bottom: calc(var(--defaultMarge) * 2);
 
 		padding: var(--defaultMarge);
 
-		box-shadow: black 0px 50px 100px -20px, black 0px 30px 60px -30px, black 0px 30px 60px -30px, black 0px 30px 60px -30px;
+		box-shadow: black 0px 20px 40px -20px, black 0px 30px 60px -30px, black 0px 30px 60px -30px, black 0px 30px 60px -30px;
 	}
 
 		.dark article
@@ -542,31 +571,6 @@ li { margin-bottom: calc(var(--defaultMiniMarge) / 2); }
 
 
 
-.credit
-{
-	text-align: center;
-	font-style: italic;
-}
-
-#arnaud-logo, #fleurot-logo
-{
-	margin-left: 4px;
-	height: 26px;
-	vertical-align: middle;
-}
- 	#fleurot-logo { height: 24px; }
-
- 	#arnaud-logo:hover, #fleurot-logo:hover
- 	{ opacity: .7; }
- 	#arnaud-logo:active, #fleurot-logo:active
- 	{ opacity: .5; }
-
-
- 	.dark #arnaud-logo, .dark #fleurot-logo
- 	{
- 		filter: invert(100%);
- 	}
-
 
 
 
@@ -657,6 +661,8 @@ body.focused { overflow: hidden; }
 
 	cursor: pointer;
 
+	box-shadow: black 0px 50px 100px -20px, black 0px 30px 60px -30px, black 0px 30px 60px -30px, black 0px 30px 60px -30px;
+
 	transition: all .4s ease;
 }
 
@@ -731,6 +737,8 @@ h1, h2, h3, h4, h5, h6
 
 	a { filter: unset !important; }
 
+	main { margin-top: 0 !important; }
+
 	article
 	{
 		position: relative;
@@ -768,6 +776,141 @@ h1, h2, h3, h4, h5, h6
 
 	
 }
+
+
+
+
+footer
+{
+	z-index: 9999999999999999999999;
+
+	color: white;
+}
+
+	.navigation
+	{
+		background-color: rgba(0,0,0,.8);
+
+		width: auto;
+		max-width: calc(var(--articleWidth) - 2 * var(--defaultMiniMarge));
+		margin-left: calc((100vw - var(--articleWidth)) / 2 + var(--defaultMiniMarge));
+
+		overflow: hidden;
+
+		z-index: 9999999999999999999999;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-content: center;
+
+
+		border-radius: var(--defaultMiniMarge);
+
+		font-size: var(--defaultFontSizeH3);
+
+
+		box-shadow: black 0px 10px 10px -20px, black 0px 30px 60px -30px, black 0px 30px 60px -30px, black 0px 30px 60px -30px;
+
+		transition: all .4s ease;
+
+	}
+
+		.navigation:hover
+		{ transform: scale(1.1) translateY(calc(var(--headerHeight) * .1)); }
+
+
+	.page-number
+	{
+		display: inline-block;
+
+		margin: 0px;
+		padding-top: 10px;
+
+		width: 50px;
+		height: 50px;
+
+		text-align: center;
+
+		color: var(--defaultStrongColor);
+	}
+
+	a.page-number
+	{
+		display: inline-block;
+
+		margin: 0px;
+		padding-top: 10px;
+
+		width: 50px;
+		height: 50px;
+
+		text-align: center;
+
+		color: var(--defaultStrongColor);
+
+
+		cursor: pointer;
+	}
+
+		a.page-number.current
+		{
+			/*color: rgba(0,0,0,.8);
+			background-color: var(--defaultStrongColor);*/
+			font-weight: bolder;
+
+			transform: scale(1.2) translateY(calc(var(--headerHeight) * -.01));
+			filter: contrast(450%);
+		}
+
+		a.page-number:hover
+		{ transform: scale(1.2) translateY(calc(var(--headerHeight) * -.02)); }
+		a.page-number:active
+		{ transform: scale(1.4) translateY(calc(var(--headerHeight) * -.04)); }
+
+
+
+
+.credit
+{
+	text-align: center;
+	font-style: normal;
+
+
+	margin-top: calc(var(--defaultMarge) * 2);
+	margin-bottom: var(--defaultMarge);
+
+	font-size: var(--defaultFontSizeH3);
+
+	text-shadow: black 1px 1px 1px;
+}
+
+#arnaud-logo, #fleurot-logo
+{
+	margin-left: 4px;
+	height: var(--defaultFontSizeH1);
+	vertical-align: middle;
+
+	transform: translateY(-3px); /* dirty fix */
+
+	filter: invert(100%) drop-shadow(0 0 2px black);
+
+
+}
+ 	#fleurot-logo { height: 24px; }
+
+ 	#arnaud-logo:hover, #fleurot-logo:hover
+ 	{ opacity: .9; }
+ 	#arnaud-logo:active, #fleurot-logo:active
+ 	{ opacity: .8; }
+
+
+ 	/*.dark #arnaud-logo, .dark #fleurot-logo
+ 	{
+ 		filter: invert(0%);
+ 	}*/
+
+
 
 
 
