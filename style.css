@@ -125,7 +125,7 @@ header
 		header h1
 		{ margin: 0; }
 
-		header h1 a { max-width: 100px;} /* awfull dirty fix */
+		header h1 a { max-width: max(150px, 30vw);} /* awfull dirty fix */
 
 		header ul
 		{ display: inline; white-space:nowrap; }
@@ -195,7 +195,7 @@ header h1 { /*margin-top: calc(var(--headerHeight) * .25);*/ }
 	height: calc(var(--headerHeight));
 	vertical-align: middle;
 
-	padding: 12%;
+	padding: 4%;
 	/*padding-top: 10%;*/
 	padding-left: 24%;
 }
