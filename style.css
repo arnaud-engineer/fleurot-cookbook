@@ -714,7 +714,7 @@ h1, h2, h3, h4, h5, h6
 
 	}
 
-	body { font-family: arial;  }
+	body { font-family: "Times New Roman", serif; -webkit-print-color-adjust: exact;  }
 
 
 
@@ -729,16 +729,15 @@ h1, h2, h3, h4, h5, h6
 
 	.nb-selector-icon { display: none; }
 
-	a { filter: contrast(100%) !important; }
+	a { filter: unset !important; }
 
 	article
 	{
 		position: relative;
 		top: 0; left: 0;
-		width: 100vw;
-		height: 100vh;
+		width: 100%;
+		height: 100%;
 		margin: 0 !important;
-		background: red !important;
 	}
 
 	.recipe-requierements ul {list-style-type: "□ "}
@@ -754,7 +753,7 @@ h1, h2, h3, h4, h5, h6
 	h1
 	{ break-after: avoid; }
 
-	*:hover, *:active { transform: none !important; opacity: 1 !important; }
+	*, *:hover, *:active { transform: none !important; opacity: 1 !important; filter: unset !important; }
 
 	* { backface-visibility: hidden; -webkit-font-smoothing: subpixel-antialiased; }
 
