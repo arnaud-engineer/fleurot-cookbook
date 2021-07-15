@@ -12,7 +12,7 @@
 		--defaultMiniMarge: calc(var(--defaultMarge) / 2);
 
 	--defaultFontSize:		18px;
-	--defaultFontSizeMini:	12px;
+	--defaultFontSizeMini:	14px;
 	--defaultFontSizeH1:	38px;
 	--defaultFontSizeH2:	28px;
 	--defaultFontSizeH3:	24px;
@@ -57,6 +57,19 @@ body
 	font-family: 'EB Garamond', Garamond, serif;
 	font-size: var(--defaultFontSize);
 	color: var(--defaultFontColor);
+
+
+/*
+	text-rendering: optimizeLegibility;
+	text-rendering: geometricPrecision;
+	font-smooth: always;
+
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;*/
+
 
 }
 
@@ -627,6 +640,7 @@ body.focused { overflow: hidden; }
 	height: max(5vh, 5vw, 70px);
 
 	background-color: rgba(0,0,0,.8);
+	filter: contrast(250%);
 
 	border: none;
 	border-radius: max(5vh, 5vw, 40px);
@@ -690,6 +704,8 @@ h1, h2, h3, h4, h5, h6
 
 	}
 
+	body { font-family: arial; }
+
 
 
 	header { display: none; }
@@ -702,6 +718,8 @@ h1, h2, h3, h4, h5, h6
 	.recipe-steps img { display: none; }
 
 	.nb-selector-icon { display: none; }
+
+	a { filter: contrast(100%) !important; }
 
 	article
 	{
@@ -725,6 +743,10 @@ h1, h2, h3, h4, h5, h6
 
 	h1
 	{ break-after: avoid; }
+
+	*:hover, *:active { transform: none !important; opacity: 1 !important; }
+
+	* { backface-visibility: hidden; -webkit-font-smoothing: subpixel-antialiased; }
 
 	/* chaque titre commence sur une nouvelle page 
 	h1, h2, h3, h4, h5, h6 {
