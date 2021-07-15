@@ -88,6 +88,8 @@ header
 	width: calc(var(--articleWidth) - 2 * var(--defaultMiniMarge));
 	height: var(--headerHeight);
 
+	overflow: hidden;
+
 	z-index: 999;
 
 	display: flex;
@@ -122,6 +124,8 @@ header
 
 		header h1
 		{ margin: 0; }
+
+		header h1 a { max-width: 100px;} /* awfull dirty fix */
 
 		header ul
 		{ display: inline; white-space:nowrap; }
@@ -191,9 +195,9 @@ header h1 { /*margin-top: calc(var(--headerHeight) * .25);*/ }
 	height: calc(var(--headerHeight));
 	vertical-align: middle;
 
-	padding: 6%;
-	padding-top: 10%;
-	padding-left: 10%;
+	padding: 12%;
+	/*padding-top: 10%;*/
+	padding-left: 24%;
 }
 
 
@@ -202,6 +206,9 @@ header h1 { /*margin-top: calc(var(--headerHeight) * .25);*/ }
 
 	header.scroll
 	{ transform: scale(.8) translateY(0px); }
+
+		header.scroll:hover
+		{ transform: scale(.95) translateY(calc(var(--headerHeight) * .2)); }	
 
 	header.hidden
 	{ transform: scale(1.2) translateY(calc(0px - 2.5 * var(--headerHeight))); }
@@ -651,10 +658,10 @@ body.focused { overflow: hidden; }
 }
 
 	.print-button:hover
-	{ transform: scale(1.1); filter: contrast(450%); }
+	{ transform: scale(1.1) translate(calc(var(--headerHeight) * -.05), calc(var(--headerHeight) * -.05)); filter: contrast(450%); }
 
 	.print-button:active
-	{ transform: scale(1.2); filter: contrast(900%); }
+	{ transform: scale(1.2) translate(calc(var(--headerHeight) * -.05), calc(var(--headerHeight) * -.05)); filter: contrast(900%); }
 
 .print-button img
 {
@@ -704,7 +711,7 @@ h1, h2, h3, h4, h5, h6
 
 	}
 
-	body { font-family: arial; }
+	body { font-family: arial;  }
 
 
 
