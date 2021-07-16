@@ -792,8 +792,8 @@ footer
 		background-color: rgba(0,0,0,.8);
 
 		width: auto;
-		max-width: calc(var(--articleWidth) - 2 * var(--defaultMiniMarge));
-		margin-left: calc((100vw - var(--articleWidth)) / 2 + var(--defaultMiniMarge));
+		max-width: calc(var(--articleWidth) - 6 * var(--defaultMiniMarge));
+		margin-left: calc((100vw - var(--articleWidth)) / 2 + var(--defaultMiniMarge) * 3);
 
 		overflow: hidden;
 
@@ -916,6 +916,9 @@ footer
 
 
 
-
+.recipe-list li
+{
+	margin: var(--defaultMiniMarge);
+}
 
 
