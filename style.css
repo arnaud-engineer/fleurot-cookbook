@@ -254,7 +254,7 @@ main
 
 
     		/* Parallax -> scroll is update with JS */
-			transform: translateY(calc(1% * var(--scroll)));
+			transform: translateY(calc(30px * var(--scroll)));
 
 
 
@@ -514,7 +514,7 @@ main
 			a
 			{
 				color: var(--defaultStrongColor);
-				filter: contrast(250%);
+				filter: contrast(200%);
 				font-weight: lighter;
 				font-style: italic;
 				text-decoration: none;
@@ -525,8 +525,8 @@ main
 
 				transition: all .4s ease;
 			}
-				a:hover { transform: scale(1.02); filter: contrast(450%); }
-				a:active { transform: scale(1.04); filter: contrast(900%); }
+				a:hover { transform: scale(1.02); filter: contrast(400%); }
+				a:active { transform: scale(1.04); filter: contrast(600%); }
 
 				.dark a { color: var(--darkStrongColor); }
 
@@ -873,6 +873,9 @@ footer
 
 .credit
 {
+	max-width: calc(var(--articleWidth) - 6 * var(--defaultMiniMarge));
+	margin-left: calc((100vw - var(--articleWidth)) / 2 + var(--defaultMiniMarge) * 3);
+
 	text-align: center;
 	font-style: normal;
 
@@ -881,6 +884,7 @@ footer
 	margin-bottom: var(--defaultMarge);
 
 	font-size: var(--defaultFontSizeH3);
+	line-height: calc(var(--defaultFontSizeH3) * 2.2);
 
 	text-shadow: black 1px 1px 1px;
 }
