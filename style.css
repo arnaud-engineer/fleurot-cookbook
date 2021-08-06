@@ -5,11 +5,6 @@
 	@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
 
 
-	/*
-		 TODO :
-		 - z-index
-	*/
-
 /*  =========================================================================
 	 CSS VARIABLES
 	========================================================================= */
@@ -124,7 +119,7 @@
 			top: 0; left: 0;
 			width: calc(var(--articleWidth) - 2 * var(--defaultMiniMarge));
 			height: var(--headerHeight);
-			z-index: 999;
+			z-index: 10;
 			/* OVERFLOW */
 			overflow: hidden;
 			/* MARGES */
@@ -160,21 +155,24 @@
 		 HEADER HOME BUTTON
 		---------------------------------------- */
 
-		header h1 { margin: 0; }
+		header h1
+		{
+			max-width: max(150px, 30vw);
+			margin: 0;
+		}
 
-			header h1 a { max-width: max(150px, 30vw);} /* TODO : awfull dirty fix */
+			#site-logo
+			{
+				/* POSITION */
+				position: relative;
+				height: calc(var(--headerHeight));
+				max-width: max(150px, 30vw);
+				vertical-align: middle;
+				/* MARGES */
+				padding: 4%;
+				padding-left: 24%;
+			}
 
-				#site-logo
-				{
-					/* POSITION */
-					position: relative;
-					height: calc(var(--headerHeight));
-					max-width: max(150px, 30vw);
-					vertical-align: middle;
-					/* MARGES */
-					padding: 4%;
-					padding-left: 24%;
-				}
 
 	/*  ----------------------------------------
 		 HEADER BUTTONS
@@ -284,7 +282,7 @@
 		background-color: black;
 		/* ANIMATION */
 		transform: scale(1);
-		z-index: -100000000000000000;
+		z-index: -1;
 	}
 
 		/* CENTERED IMG */
@@ -448,15 +446,17 @@
 
 		.nb-selector-icon { color: var(--defaultStrongColor); }
 
-		/* TODO : dirty display, enhance */
 		.recipe-nb-persons
 		{
 			/* NORMALIZE */
 			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
 			/* POSITION */
 			display: inline-block;
 			/* MARGES */
 			margin-bottom: var(--defaultMiniMarge);
+			margin-left: 1ch;
 			/* TEXT */
 			color: var(--defaultStrongColor);
 			font-size: var(--defaultFontSize);
@@ -466,11 +466,11 @@
 			/* STYLE */
 			cursor: pointer;
 			border: none;
-			/* TODO : bug safari highlight : TODO need a working fix, not garbage code */
-			-webkit-tap-highlight-color: transparent;
-			-webkit-focus-ring-color: transparent !important;
-			background-color: transparent;
 		}
+
+			/* safari quickfix */
+			.recipe-nb-persons:focus
+			{ outline: none; }
 
 
 	/*  ----------------------------------------
@@ -651,7 +651,7 @@
 
 	footer
 	{
-		z-index: 9999999999999999999999;
+		z-index: 10;
 		color: white;
 	}
 
@@ -670,7 +670,7 @@
 			width: auto;
 			max-width: calc(var(--articleWidth) - 6 * var(--defaultMiniMarge));
 			overflow: hidden;
-			z-index: 9999999999999999999999;
+			z-index: 11;
 			/* FLEX */
 			display: flex;
 			flex-direction: row;
@@ -753,7 +753,7 @@
 			/* POSITION */
 			height: var(--defaultFontSizeH1);
 			vertical-align: middle;
-			transform: translateY(-3px); /* TODO : dirty fix */
+			transform: translateY(-3px); /* dirty quick fix, let's keep it 😉 */
 			/* MARGES */
 			margin-left: 4px;
 			/* STYLE */
@@ -788,7 +788,7 @@
 		/* POSITION */
 		position: fixed;
 		top: 0; left: 0;
-		z-index: 99999999;
+		z-index: 999;
 		/* SCROLL */
 		overflow-y: auto;
 		/* HIDDEN WHEN NOT ON FOCUS */
