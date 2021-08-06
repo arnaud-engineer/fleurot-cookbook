@@ -9,12 +9,12 @@
 			<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 		<!-- CSS -->
 			<link rel="stylesheet" href="style.css"/>
-		<!-- JavaScript (ORDER : https://support.freshmarketer.com/support/solutions/articles/50000001426-synchronous-and-asynchronous-script-execution )-->
+		<!-- JavaScript -->
 			<script src="script.js"></script>
 	</head>
 
 	<body class="">
-		<noscript>JavaScript is currently disabled on your browser, to enhanced your browsing experience you should activate it : <a href="https://www.enable-javascript.com">see how</a></noscript>
+		<noscript>JavaScript est actuellement désactivé sur votre navigateur, pour améliorer votre visite, vous devriez l'activer : <a href="https://www.enable-javascript.com">voir comment</a></noscript>
 
 		<header class="hidden">
 			<h1><a href="index.html"><img id="site-logo" src="assets/logo/site-logo.svg"></a></h1>
@@ -25,17 +25,25 @@
 		</header>
 
 		<main>
-
+			<!-- FOCUS (modal window, hidden by default) -->
 			<div class="focus" onclick="leaveFocus();">
 				<div class="focus-background" onclick="leaveFocus();"></div>
 				<div class="focus-element" onclick="leaveFocus();">
-					<!--<img src="assets/img/oignon.jpg"/>-->
 				</div>
 			</div>
 
+			<!-- BACKGROUND IMAGE -->
 			<div class="recipe-illustration">
 				<img src="assets/img/flammekueche.jpg"/>
 			</div>
+
+			<!-- PRINT BUTTON -->
+			<button class="print-button" onclick="window.print();">
+				<img src="assets/icon/print-button.svg"/>
+			</button>
+
+			<!-- ARTICLE -->
+
 			<article>
 				<div class="recipe-head">
 					<p class="recipe-data"><span class="recipe-categories">Entrée / Plat Principal</span> - <img class="icon" src="assets/icon/vegan.svg"/> <img class="icon" src="assets/icon/vegetarian.svg"/> <img class="icon" src="assets/icon/lactose.svg"/> <img class="icon" src="assets/icon/gluten.svg"/> <img class="icon" src="assets/icon/halal.svg"/>
@@ -118,8 +126,9 @@
 
 				<hr/>
 
-
 				<div class="recipe-steps">
+
+					<!--------------------------- FREE ZONE FOR MARKDOWN --------------------------->
 
 					<h1>Pâte</h1>
 					<p>
@@ -156,7 +165,6 @@
 							<li><strong>Placer au frigo</strong> en attendant le dressage (au maximum 8h avant car le frigo assèche la pâte qui pourrait se désagréger en morceaux)</li>
 						</ul>
 					</ul>
-
 
 					<h1>Base</h1>
 
@@ -207,7 +215,8 @@
 						<li><strong>enfourner la flamenkueche</strong>, s'aider d'une plaque pour la manipuler car elle est très molle. On peut aussi l'enfourner à deux en portant chaque bord du papier sulfurisé</li>
 						<li><strong>Laisser cuire</strong> 6-7 minutes à 280°C ventillé (<strong>Attention</strong> : Vraiment surveiller la cuisson, même avec un four que vous connaissez bien). La flammekuesche est prête lorsque ses bords commencent à noircir</li>
 					</ul>
-					
+
+					<!------------------------- END FREE ZONE FOR MARKDOWN ------------------------->
 				</div>
 
 				<hr/>
@@ -238,23 +247,13 @@
 					</div>
 
 				</div>
-
 			</article>
 		</main>
-
 
 		<footer>
 			<div class="credit">
 				recettes et back-end par <a href="https://madahindev.com/"><img id="fleurot-logo" src="assets/logo/fleurot-signature.svg"></a> - front-end par <a href="https://arnaud.engineer"><img id="arnaud-logo" src="assets/logo/arnaud-engineer.svg"></a>
 			</div>
 		</footer>
-
-		<button class="print-button" onclick="window.print();">
-			<img src="assets/icon/print-button.svg"/>
-		</button>
-
-
-
-
 	</body>
 </html>
